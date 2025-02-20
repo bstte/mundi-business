@@ -1,0 +1,111 @@
+.ss_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cfd1d4;
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    padding: 18px 20px;
+    backdrop-filter: blur(4px) brightness(1) contrast(1) grayscale(0) hue-rotate(0deg) invert(0) opacity(1) saturate(1) sepia(0);
+    -webkit-backdrop-filter: blur(4px) brightness(1) contrast(1) grayscale(0) hue-rotate(0deg) invert(0) opacity(1) saturate(1) sepia(0);
+  
+  }
+  
+  .ss_header ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .ss_header ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+
+  .ss_hed_logo_div span {
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.ss_hed_logo_div a {
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+nav.ss_hed_nav_sec ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav.ss_hed_nav_sec a {
+  background: #fff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 8px 28px;
+  color: #000 !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+nav.ss_hed_nav_sec svg {
+  width: 16px;
+}
+
+.ss_hed_right_div ul {
+  justify-content: end;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  gap: 18px;
+}
+
+.ss_hed_right_div li:nth-child(1) svg {
+  width: 16px;
+}
+
+.ss_hed_right_div li:nth-child(2) a {
+ 
+  padding: 10px 17px;
+  display: inline-block;
+  border-radius: 7px;
+}
+
+.ss_hed_right_div li:nth-child(2) a:hover {
+  background: #fff;
+}
+
+.ss_hed_right_div a {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.ss_hed_right_div li:nth-child(3) a {
+  background: #1d4ed8;
+  padding: 10px 17px;
+  display: inline-block;
+  border-radius: 7px;
+  color: #fff;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  line-height: 20px;
+}
+
+.ss_hed_right_div li:nth-child(3) a:hover {
+  transform: scale(1.04);
+  letter-spacing: 0;
+}
+
+.ss_hed_right_div li:nth-child(1) {
+  margin-right: 15px;
+}

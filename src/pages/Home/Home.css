@@ -1,0 +1,306 @@
+.home-container {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .home-container a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  
+  
+  .ss_bannerimg img {
+    width: 100%;
+    display: block;
+  }
+  
+  .ss_banner_text_box {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translate(0%, -45%);
+    text-align: left;
+    color: #fff;
+    max-width: 42rem;
+}
+  
+  /* Banner Section Container */
+.ss_banner_mn_sec {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; 
+}
+.ss_banner_text_box ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+/* Container for the Image */
+.ss_bannerimg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ss_bannerimg:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #111827;
+  opacity: 0.7;
+}
+
+/* Banner Image */
+.ss_bannerimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.ss_banner_text_box h1 {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.ss_banner_text_box h1 span {
+  color: #8b5cf6;
+  display: block;
+}
+
+.ss_banner_text_box p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.ss_banner_text_box ul li a {
+  background: #8b5cf6;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 40px;
+  border-radius: 100px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  border:1px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.ss_banner_text_box ul li:nth-child(2) a{
+  background: #fff;
+  color:#000;
+}
+
+
+.ss_banner_text_box ul li:nth-child(2) a:hover{
+  background: #29303C;
+  color:#ffffff;
+  border:1px solid #fff;
+}
+
+.ss_banner_text_box ul li a:hover{
+  transform: scale(1.05);
+  letter-spacing: 0;
+  background: #7C3AED;
+}
+
+.ss_banner_btm_text_bx h2 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.ss_banner_btm_text_bx {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.ss_banner_btm_text_bx p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  width: 70%;
+  margin: auto;
+  max-width: 880px;
+  color: #4b5563;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+.ss_banner_btm_text_bx button {
+  background: #0055ff;
+  color: #fff;
+  border: 0;
+  padding: 8px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.ss_empower_sec{
+  padding: 60px 0
+  
+}
+.ss_banner_btm_text_bx button:hover{
+background:   #1d4ed8;;
+}
+
+.ss_2col_img_div img {
+  width: 100%;
+}
+
+
+
+/* Position the text box on the image */
+.ss_home_2col_text_bx1 {
+  position: absolute;
+  bottom: 15px;
+  left: 35px;
+  z-index: 2; /* Ensure it sits above the overlay */
+}
+
+/* Container for the image (for proper positioning) */
+.ss_2col_img_div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* Add a black overlay with 0.5 opacity */
+.ss_2col_img_div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Set image height and add transition for hover scaling */
+.ss_2col_img_div img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+/* On hover, zoom the image slightly */
+.ss_2col_img_div:hover img {
+  transform: scale(1.05);
+}
+
+/* Style the unordered list to display flex with space-between */
+.ss_home_2col_text_bx2 ul {
+  display: flex;
+      justify-content: space-between;
+      padding: 22px 20px;
+      list-style: none;
+      margin: 0;
+      align-items: center;
+}
+.ss_hm_2col_div {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+.ss_home_2col_text_bx2 p{
+  margin-bottom: 0;
+}
+
+.ss_2col_img_div img {
+  width: 100%;
+}
+
+.ss_home_2col_text_bx1 h3 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.ss_home_2col_text_bx1 p {
+  color: #fff;
+}
+
+.ss_home_2col_text_bx2 p {
+  color: #22c55e;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.ss_home_2col_text_bx2 ul li:nth-child(1) svg {
+  width: 20px;
+}
+
+.ss_home_2col_text_bx2 a {
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  gap: 13px;
+}
+
+.ss_home_2col_text_bx2 a svg {
+  width: 17px;
+}
+
+.ss_ready_mn_sec {
+  text-align: center;
+}
+
+section.ss_ready_mn_sec ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+}
+
+s.ss_ready_mn_sec h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ss_ready_mn_sec p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.ss_ready_mn_sec ul li button {
+  background: #0055FF;
+  color: #fff;
+  padding: 7px 25px;
+  border-radius: 5px;
+  border: 1px solid #1d4ed8;
+}
+
+.ss_ready_mn_sec ul li:nth-child(2) button {
+  background: transparent;
+  color: #1d4ed8;
+  ;
+}
+
+.ss_ready_mn_sec{
+  padding-bottom: 60px;
+}
+.ss_ready_mn_sec ul li button:hover{
+background: #0035FF;
+}
+
+.ss_ready_mn_sec ul li:nth-child(2) button:hover{
+  background: #fff;
+  color:#000;
+}

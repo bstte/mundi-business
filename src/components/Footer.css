@@ -1,0 +1,144 @@
+.ss_footer {
+  padding: 60px 0 0;
+    background-color:rgb(30,58,138);
+    color: white;    width: 100%;
+    bottom: 0;
+  }
+  
+
+  .ss_foot_box_div ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.ss_footer h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+
+.ss_foot_box_div ul a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.ss_foot_box_div li {
+    line-height: 30px;
+}
+
+.ss_foot_box_div ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ss_foot_box_div h4 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.ss_foot_box_div ul a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.ss_foot_box_div li {
+  line-height: 30px;
+}
+
+.ss_foot_news_box_div input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #1d4ed8;
+  padding: 10px 15px 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  color:#fff;
+}
+
+.ss_foot_news_box_div button {
+  width: 100%;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: #3b82f6;
+  padding: 8px 0;
+  border-radius: 100px;
+  font-size: 1.125rem;
+  color: #fff;
+  font-weight: 600;
+  align-items: center;
+  margin-top: 13px;
+}
+
+.ss_foot_news_box_div svg {
+  width: 18px;
+}
+
+.ss_foot_btm_sec .row{
+  border-top:1px solid #3b82f6;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.ss_foot_btm_sec{
+  padding: 70px 0 40px;
+}
+   
+.ss_foot_news_box_div input::placeholder { /* Edge 12-18 */
+  color:#fff;
+}
+section.ss_foot_btm_sec ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+
+section.ss_foot_btm_sec select {
+  width: 170px;
+  max-width: 170px;
+  height: 38px;
+  line-height: 38px;
+  padding: 0px 10px;
+  background: transparent;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #1d4ed8;
+}
+
+section.ss_foot_btm_sec select option{
+  color:#000;
+}
+
+section.ss_foot_btm_sec button {
+  background: rgb(34,197,94);
+  border: 0;
+  padding: 7px 30px;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+section.ss_foot_btm_sec button svg {
+  width: 18px;
+}
+
+section.ss_foot_btm_sec button:hover {
+  background: rgb(74,222,128);
+}
+
+.ss_foot_news_box_div input:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}

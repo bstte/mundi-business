@@ -4,7 +4,7 @@ import Sidebar from "../../components/Sidebar";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState("Corporate");
+  const [activeTab, setActiveTab] = useState("Vibrant");
 
   return (
     <div className={`ss_dashboard_mn_sec ss_main_sec_${activeTab}`}> {/* Updated dynamic class */}
@@ -39,9 +39,9 @@ const Dashboard = () => {
                 <div className="col-lg-12">
                   <div className="ss_dash_tab_sec">
                     <ul>
-                      <li><button className={activeTab === "Corporate" ? "active" : ""} onClick={() => setActiveTab("Corporate")}>Corporate & Minimalist</button></li>
+                      {/* <li><button className={activeTab === "Corporate" ? "active" : ""} onClick={() => setActiveTab("Corporate")}>Corporate & Minimalist</button></li> */}
                       <li><button className={activeTab === "Vibrant" ? "active" : ""} onClick={() => setActiveTab("Vibrant")}>Vibrant & Dynamic</button></li>
-                      <li><button className={activeTab === "Casual" ? "active" : ""} onClick={() => setActiveTab("Casual")}>Casual & User-Friendly</button></li>
+                      {/* <li><button className={activeTab === "Casual" ? "active" : ""} onClick={() => setActiveTab("Casual")}>Casual & User-Friendly</button></li> */}
                     </ul>
                   </div>
                 </div>

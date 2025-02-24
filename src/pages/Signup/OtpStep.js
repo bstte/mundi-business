@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Signup.css";
 import 'bootstrap/dist/css/bootstrap.css';
-import ApiService from '../../Services/api';
+import ApiService from '../../API/ApiService';
 
 const OtpStep = ({ email, nextStep, prevStep }) => {
   const [otp, setOtp] = useState(['', '', '', '', '', '']); // 6 boxes ke liye state

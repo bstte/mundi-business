@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Signup.css";
 import 'bootstrap/dist/css/bootstrap.css';
-import ApiService from "../../Services/api";
+import ApiService from "../../API/ApiService";
 import { useNavigate } from "react-router-dom";
 
 const DetailsStep = ({ userDetails, setUserDetails, email }) => {

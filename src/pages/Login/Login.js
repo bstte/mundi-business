@@ -4,7 +4,7 @@ import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setToken, setUser } from '../../redux/userSlice';
-import ApiService from '../../Services/api';
+import ApiService from '../../API/ApiService';
 
 function Login() {
   const [email, setEmail] = useState('');

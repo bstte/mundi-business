@@ -24,7 +24,7 @@ const Home = () => {
     <p>Transform your business data into actionable insights. Make informed decisions with our comprehensive analytics platform.</p>
     <ul>
       <li>
-        <Link ro="/">Start Free Trial</Link>
+        <button>Start Free Trial</button>
       </li>
       <li>
      

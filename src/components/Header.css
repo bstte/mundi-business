@@ -20,6 +20,19 @@
     justify-content: center;
   }
   
+  .ss_hed_nav_sec > ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 5px;
+    justify-content: center;
+    position: relative;
+  }
+
+/* Parent menu item ke liye */
+.ss_hed_nav_sec > ul  {
+  position: relative;
+}
+
   .ss_header ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -48,7 +61,7 @@ nav.ss_hed_nav_sec a {
   background: #fff;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  padding: 8px 28px;
+  padding: 8px 20px;
   color: #000 !important;
   display: flex;
   align-items: center;
@@ -73,24 +86,25 @@ nav.ss_hed_nav_sec svg {
   width: 16px;
 }
 
-.ss_hed_right_div li:nth-child(2) a {
- 
+.ss_hed_right_div li:nth-child(2) button {
+ background: transparent;
   padding: 10px 17px;
   display: inline-block;
   border-radius: 7px;
 }
 
-.ss_hed_right_div li:nth-child(2) a:hover {
+.ss_hed_right_div li:nth-child(2) button:hover {
   background: #fff;
 }
 
-.ss_hed_right_div a {
+.ss_hed_right_div button {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
+  border:0;
 }
 
-.ss_hed_right_div li:nth-child(3) a {
+.ss_hed_right_div li:nth-child(3) button {
   background: #1d4ed8;
   padding: 10px 17px;
   display: inline-block;
@@ -99,13 +113,100 @@ nav.ss_hed_nav_sec svg {
   transition: transform 0.2s ease;
   text-decoration: none;
   line-height: 20px;
+  border: 0;
 }
 
-.ss_hed_right_div li:nth-child(3) a:hover {
+.ss_hed_right_div li:nth-child(3) button:hover {
   transform: scale(1.04);
   letter-spacing: 0;
 }
 
 .ss_hed_right_div li:nth-child(1) {
   margin-right: 15px;
+}
+
+.ss_hed_right_div ul li:nth-child(4) button {
+  background: #1e3a8a;
+  padding: 10px 17px;
+  display: inline-block;
+  border-radius: 7px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 20px;
+  border: 0;
+  transition: transform 0.2s ease;
+}
+
+.ss_hed_right_div li:nth-child(4) button:hover {
+  transform: scale(1.04);
+  letter-spacing: 0;
+}
+
+
+
+.ss_hed_nav_sec .ss_hed_droup_menu {
+  position: absolute;
+  top: 102%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 600px;
+  width: 600px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95) translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+  gap: 5px; /* Space between items */
+      padding: 10px;
+ 
+}
+
+ul.ss_hed_droup_menu p {
+  font-size: 0.875rem !important;
+  color: #707079;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+/* Dropdown ke list items */
+.ss_hed_droup_menu li {
+  list-style: none;
+  padding: 5px;
+}
+
+/* Dropdown ke links */
+.ss_hed_nav_sec .ss_hed_droup_menu a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 0.875rem;
+  color: #333;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  text-align: left;
+}
+
+/* Hover Effect */
+.ss_hed_droup_menu a:hover {
+  background: #f5f5f5;
+}
+
+/* Show Dropdown on Hover */
+.ss_hed_nav_sec > ul > li:hover .ss_hed_droup_menu {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+}
+
+nav.ss_hed_nav_sec {
+  text-align: center;
+}
+
+.ss_hed_menu_1st:hover .lucide-chevron-down {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
 }

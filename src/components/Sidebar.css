@@ -61,6 +61,17 @@
     gap: 10px;
 }
 
+.ss_dash_side_bar ul li button {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+border: 0;
+}
+
+
 .ss_content .container{
     max-width: 100%;
     width: 100%;

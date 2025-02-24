@@ -1,7 +1,21 @@
-// DetailsStep.jsx
-import React from "react";
+import React, { useEffect } from "react";
+import "./Signup.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import ApiService from "../../Services/api";
+import { useNavigate } from "react-router-dom";
 
-const DetailsStep = ({ userDetails, setUserDetails, prevStep }) => {
+const DetailsStep = ({ userDetails, setUserDetails, email }) => {
+
+  useEffect(() => {
+    if (email) {
+      setUserDetails((prevDetails) => ({
+        ...prevDetails,
+        email: email,  
+      }));
+    }
+  }, [email,setUserDetails]); 
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserDetails((prevDetails) => ({
@@ -9,114 +23,117 @@ const DetailsStep = ({ userDetails, setUserDetails, prevStep }) => {
       [name]: value,
     }));
   };
+  console.log(userDetails)
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add signup submission logic here
+
+    try {
+      const response = await ApiService.signup(userDetails);
+      console.log("Response:", response);
+
+      if (response.data.success === true) {
+        navigate('/login', { replace: true });
+      }
+    } catch (error) {
+      console.error("Email verify error", error);
+      alert("Something went wrong. Please try again.");
+    }
+
     console.log("User Details:", userDetails);
   };
 
   return (
-    <div > 
-    <form onSubmit={handleSubmit} style={styles.form}>
-      <h2 style={styles.heading}>Sign Up</h2>
-      <label style={styles.label}>First Name:</label>
-      <input
-        type="text"
-        name="firstName"
-        value={userDetails.firstName}
-        onChange={handleChange}
-        required
-        style={styles.input}
-      />
-      <label style={styles.label}>Last Name:</label>
-      <input
-        type="text"
-        name="lastName"
-        value={userDetails.lastName}
-        onChange={handleChange}
-        required
-        style={styles.input}
-      />
-      <label style={styles.label}>Phone Number:</label>
-      <input
-        type="text"
-        name="phoneNumber"
-        value={userDetails.phoneNumber}
-        onChange={handleChange}
-        required
-        style={styles.input}
-      />
-      <label style={styles.label}>Password:</label>
-      <input
-        type="password"
-        name="password"
-        value={userDetails.password}
-        onChange={handleChange}
-        required
-        style={styles.input}
-      />
-      <div style={styles.buttonContainer}>
-        <button type="button" onClick={prevStep} style={styles.button}>
-          Back
-        </button>
-        <button type="submit" style={styles.button}>
-          Sign Up
-        </button>
+    <div className="ss_log_mn_div ss_signup_page">
+      <div className="row">
+        <div className="col-xl-6 col-lg-6 col-md-6">
+          <div className="ss_sign_frm_div">
+            <div className="ss_hed_logo_div">
+              <a href="/" data-discover="true">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+                  <rect width="40" height="40" rx="8" fill="#1E3A8A"></rect>
+                  <path d="M20 8L32 20L20 32L8 20L20 8Z" fill="#60A5FA" fillOpacity="0.8"></path>
+                  <path d="M20 12L28 20L20 28L12 20L20 12Z" fill="#2563EB" fillOpacity="0.9"></path>
+                  <circle cx="20" cy="20" r="4" fill="#FFFFFF"></circle>
+                </svg>
+                <span>MundiBusiness</span>
+              </a>
+            </div>
+
+            <form onSubmit={handleSubmit}>
+              <h2>Create a New Account</h2>
+              <p className="ss_signin_para">Already have an account? <button>Sign in</button></p>
+
+              <div className="ss_signup_frmgrp_div">
+                <ul>
+                  <li>
+                    <label>First Name:</label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={userDetails.firstName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </li>
+                  <li>
+                    <label>Last Name:</label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={userDetails.lastName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </li>
+                </ul>
+              </div>
+
+              <div className="ss_signup_frmgrp_div">
+                <ul>
+                  <li>
+                    <label>Phone Number:</label>
+                    <input
+                      type="text"
+                      name="phone"
+                      value={userDetails.phone}
+                      onChange={handleChange}
+                      required
+                    />
+                  </li>
+                  <li>
+                    <label>Email Address:</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={userDetails.email}
+                      onChange={handleChange}
+                      readOnly
+                    />
+                  </li>
+                </ul>
+              </div>
+
+              <label>Password:</label>
+              <input
+                type="password"
+                name="password"
+                value={userDetails.password}
+                onChange={handleChange}
+                required
+              />
+
+              <div>
+                <button type="submit">Sign Up</button>
+                {/* <button className="ss_back_btn" type="button" onClick={prevStep}>Back</button> */}
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </form>
     </div>
   );
-};
-
-const styles = {
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    maxWidth: '400px',
-    margin: '0 auto',
-    padding: '20px',
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-    backgroundColor: '#fff',
-  },
-  heading: {
-    marginBottom: '20px',
-    fontSize: '24px',
-    color: '#333',
-  },
-  label: {
-    alignSelf: 'flex-start',
-    marginBottom: '5px',
-    fontSize: '14px',
-    color: '#555',
-  },
-  input: {
-    width: '100%',
-    padding: '10px',
-    marginBottom: '15px',
-    fontSize: '16px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-  },
-  buttonContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    color: '#fff',
-    backgroundColor: '#007bff',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-  },
 };
 
 export default DetailsStep;

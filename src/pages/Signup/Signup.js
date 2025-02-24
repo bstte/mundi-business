@@ -37,6 +37,7 @@ const Signup = () => {
           userDetails={userDetails}
           setUserDetails={setUserDetails}
           prevStep={prevStep}
+          email={email}  
         />
       );
     default:

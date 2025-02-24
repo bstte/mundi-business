@@ -22,7 +22,7 @@
     position: absolute;
     top: 50%;
     left: 8%;
-    transform: translate(0%, -45%);
+    transform: translate(0%, -40%);
     text-align: left;
     color: #fff;
     max-width: 42rem;
@@ -85,7 +85,7 @@
   margin-top: 2rem;
 }
 
-.ss_banner_text_box ul li a {
+.ss_banner_text_box ul li button {
   background: #8b5cf6;
   color: #fff;
   display: inline-block;
@@ -98,19 +98,19 @@
   transition: transform 0.2s ease;
 }
 
-.ss_banner_text_box ul li:nth-child(2) a{
+.ss_banner_text_box ul li:nth-child(2) button{
   background: #fff;
   color:#000;
 }
 
 
-.ss_banner_text_box ul li:nth-child(2) a:hover{
+.ss_banner_text_box ul li:nth-child(2) button:hover{
   background: #29303C;
   color:#ffffff;
   border:1px solid #fff;
 }
 
-.ss_banner_text_box ul li a:hover{
+.ss_banner_text_box ul li button:hover{
   transform: scale(1.05);
   letter-spacing: 0;
   background: #7C3AED;

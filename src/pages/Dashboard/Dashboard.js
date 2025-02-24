@@ -7,7 +7,7 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("Corporate");
 
   return (
-    <div className="ss_dashboard_mn_sec">
+    <div className={`ss_dashboard_mn_sec ss_main_sec_${activeTab}`}> {/* Updated dynamic class */}
       <Header />
 
       <div className="ss_dash_main_sec">
@@ -71,16 +71,50 @@ const Dashboard = () => {
 
               {activeTab === "Vibrant" && (
                 <div className="row ss_Vibrant">
-                  <div className="col-lg-12">
-                    <h1>Vibrant</h1>
+                 <div className="col-lg-6">
+                    <div className="ss_dash_graph_div">
+                      <h3>Email Campaign Performance</h3>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bar-chart2 w-24 h-24 text-blue-500 mx-auto mb-4"><line x1="18" x2="18" y1="20" y2="10"></line><line x1="12" x2="12" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="14"></line></svg>
+                      <p className="text-gray-500 text-center">Open Rates</p>
+                      <div className="ss_dash_graph_div_last"><span>42%</span><span>+5%</span></div>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-6">
+                    <div className="ss_dash_graph_div ss_dash_graph_div2">
+                      <h3 className="animate__fadeInLeft">Conversion Rates</h3>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-line-chart w-24 h-24 text-green-500 mx-auto mb-4"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
+                      <p className="text-gray-500 text-center">Monthly Trends</p>
+                      <div className="ss_dash_graph_div_last"><span>8.7%</span><span>+1.2%</span></div>
+                    </div>
                   </div>
                 </div>
               )}
 
               {activeTab === "Casual" && (
                 <div className="row ss_Casual">
-                  <div className="col-lg-12">
-                    <h1>Casual</h1>
+                  <div className="col-lg-6">
+                    <div className="ss_dash_graph_div">
+                      <h3>Trending Keywords</h3>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bar-chart2 w-24 h-24 text-blue-500 mx-auto mb-4"><line x1="18" x2="18" y1="20" y2="10"></line><line x1="12" x2="12" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="14"></line></svg>
+                      <p className="text-gray-500 text-center">Popular Searches</p>
+                      <div className="ss_dash_graph_div_last">
+                        <ul>
+                          <li><button>marketing</button></li>
+                          <li><button>sales</button></li>
+                          <li><button>social</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-6">
+                    <div className="ss_dash_graph_div ss_dash_graph_div2">
+                      <h3 className="animate__fadeInLeft">User Engagement</h3>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-line-chart w-24 h-24 text-green-500 mx-auto mb-4"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
+                      <p className="text-gray-500 text-center">Weekly Stats</p>
+                      <div className="ss_dash_graph_div_last"><span>85%</span><span>+3%</span></div>
+                    </div>
                   </div>
                 </div>
               )}

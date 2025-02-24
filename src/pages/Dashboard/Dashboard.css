@@ -50,7 +50,7 @@ section.ss_dash_graph_sec {
 }
 
 .ss_dash_graph_div h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     color: #000;
     border-bottom: 1px solid #e5e5e5;
@@ -120,3 +120,147 @@ section.ss_dash_hed {
     border-bottom: 1px solid #cfd1d4;
     padding-bottom: 12px;
 }
+
+
+.ss_main_sec_Vibrant .ss_dash_side_bar {
+    background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+    --tw-gradient-from: #0d9488;
+    --tw-gradient-to: #2563eb;
+}
+
+.ss_main_sec_Vibrant .ss_dash_side_bar li:hover {
+    background-color: #1e3a8a;
+}
+
+.ss_main_sec_Vibrant .ss_dash_side_bar .active {
+    background-color: #1e3a8a;
+}
+
+.ss_dash_hed h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+.ss_main_sec_Vibrant .ss_dash_hed h2{
+    color:#0d9488;
+}
+
+.ss_main_sec_Vibrant .ss_dash_tab_sec .active {
+    color: #fff;
+    background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+    --tw-gradient-from: #0d9488;
+    --tw-gradient-to: #2563eb;
+}
+
+.ss_main_sec_Vibrant h3{
+    color:#0d9488;
+}
+
+.ss_main_sec_Vibrant .ss_dash_graph_div svg, .ss_main_sec_Vibrant .ss_dash_graph_div_last{
+    color: #f97316;
+}
+
+.ss_main_sec_Vibrant .ss_dash_graph_div2 svg, .ss_main_sec_Vibrant .ss_dash_graph_div2 .ss_dash_graph_div_last{
+    color: #a855f7;
+}
+
+
+.ss_main_sec_Vibrant .ss_dash_graph_div{
+    border: 2px solid #e5e5e5;
+    border-color: rgb(253 186 116);
+
+}
+
+.ss_main_sec_Vibrant .ss_dash_graph_div.ss_dash_graph_div2 {
+    border: 2px solid #e5e5e5;
+    border-color: rgb(216 180 254);
+}
+
+
+.ss_main_sec_Vibrant .header-search{
+    border: 1px solid #0d9488;
+}
+.ss_main_sec_Vibrant .header-search svg{
+    color:#0d9488;
+}
+
+
+.ss_main_sec_Casual .ss_dash_side_bar{
+    background: #DBEAFE;
+}
+.ss_main_sec_Casual .ss_dash_side_bar ul li a {
+    color: #2563eb;
+}
+.ss_main_sec_Casual .ss_dash_side_bar .active a{
+color:#fff;
+}
+.ss_main_sec_Casual .ss_dash_side_bar  a:hover{
+    color:#fff;
+    }
+
+    .ss_main_sec_Casual .ss_dash_tab_sec .active {
+        background: #1d4ed8;
+        color: #fff;
+    }
+
+    .ss_main_sec_Casual .ss_dash_side_bar ul li {
+        border-bottom: 1px solid #cacaff;
+    }
+
+    .ss_main_sec_Casual .ss_sidebar h2{
+        color:#1D69DC;
+    }
+
+    .ss_main_sec_Casual .ss_dash_hed h2 {
+        color:#1D69DC;
+    }
+    .ss_main_sec_Casual h3 {
+        color:#1D69DC;
+    }
+
+    .ss_main_sec_Vibrant .ss_dash_side_bar ul li{
+        border-bottom: 1px solid #ffffff47;
+    }
+    
+    .ss_main_sec_Casual.header-search{
+        border: 1px solid #1d4ed8;
+    }
+
+    .ss_main_sec_Casual .header-search svg{
+        color: #1d4ed8;
+    }
+
+    .ss_dash_graph_div p{
+        color: rgb(107 114 128);
+    }
+
+    .ss_dash_graph_div_last ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .ss_dash_graph_div_last ul button {
+        border-color: rgb(228 228 231);
+        border: 1px solid rgb(228 228 231);
+        background: transparent;
+        color: #000;
+        font-size: 14px;
+        padding: 0px 20px;
+        border-radius: 100px;
+        font-weight: 500;
+    }
+
+    .ss_main_sec_Casual .ss_dash_graph_div {
+        border: 2px solid #e5e5e5;
+        border-color: rgb(191 219 254);
+    }
+
+    .ss_main_sec_Casual .ss_dash_graph_div.ss_dash_graph_div2 {
+        border: 2px solid #e5e5e5;
+        border-color: rgb(187 247 208);
+    }

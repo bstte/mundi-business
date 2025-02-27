@@ -1,28 +1,36 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
+
+// LocalStorage se token aur user data ko retrieve karein
+const initialToken = localStorage.getItem("token");
+const initialUser = localStorage.getItem("user")
+  ? JSON.parse(localStorage.getItem("user"))
+  : null;
 
 const initialState = {
-  user: null,
-  token: localStorage.getItem('token') || null,
+  token: initialToken || null,
+  user: initialUser || null,
 };
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
-    setUser: (state, action) => {
-      state.user = action.payload;
-    },
     setToken: (state, action) => {
       state.token = action.payload;
-      localStorage.setItem('token', action.payload);
+      localStorage.setItem("token", action.payload); // Token ko localStorage me save karein
+    },
+    setUser: (state, action) => {
+      state.user = action.payload;
+      localStorage.setItem("user", JSON.stringify(action.payload)); // User data ko store karein
     },
     logout: (state) => {
-      state.user = null;
       state.token = null;
-      localStorage.removeItem('token');
+      state.user = null;
+      localStorage.removeItem("token"); // Logout hone par remove karein
+      localStorage.removeItem("user");
     },
   },
 });
 
-export const { setUser, setToken, logout } = userSlice.actions;
+export const { setToken, setUser, logout } = userSlice.actions;
 export default userSlice.reducer;

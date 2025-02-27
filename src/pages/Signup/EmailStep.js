@@ -14,7 +14,7 @@ const EmailStep = ({ email, setEmail, nextStep }) => {
       const data = { email: email };
       nextStep();
 
-      const response = await ApiService.SendVerificationCode(data);
+      const response = await ApiService.ApiService.SendVerificationCode(data);
       console.log("response", response.data);
   
       if (response.data.success === true) {

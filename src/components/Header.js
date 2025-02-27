@@ -2,12 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import 'bootstrap/dist/css/bootstrap.css';
-import { useSelector } from "react-redux";
 
 
-const Header = () => {
+const Header = ({user}) => {
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user.user); // Redux se user ko access karein
 
 
   return (

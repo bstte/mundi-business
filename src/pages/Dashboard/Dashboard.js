@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import "./Dashboard.css";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("Vibrant");
+  const user = useSelector((state) => state.user.user);
 
   return (
     <div className={`ss_dashboard_mn_sec ss_main_sec_${activeTab}`}> {/* Updated dynamic class */}
-      <Header />
+      <Header user={user}/>
 
       <div className="ss_dash_main_sec">
         <div className="ss_dash_side_bar">
-          <Sidebar />
+          <Sidebar user={user}/>
         </div>
 
         <div className="ss_content">

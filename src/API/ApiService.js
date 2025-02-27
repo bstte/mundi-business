@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://mundiserver.vercel.app/api/';
 
-// Axios instance bana lo taaki har request me base URL set rahe
+// Axios instance
 const api = axios.create({
     baseURL: BASE_URL,
     headers: {
@@ -19,8 +19,20 @@ const ApiService = {
     getUserProfile: (token) => api.get('user/profile', { 
         headers: { Authorization: `Bearer ${token}` } 
     }),
-
-   
 };
 
-export default ApiService;
+// Admin API functions
+const AdminApiService = {
+    adminlogin: (data) => api.post('auth/admin-signin', data),
+    adminUsersList: (token) => api.get('admin/user-list', { 
+        headers: { 
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        } 
+    }),
+};
+
+// ✅ Assign to a variable before exporting
+const services = { ApiService, AdminApiService };
+export default services;

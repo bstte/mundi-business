@@ -1,53 +1,97 @@
 import React from "react";
 import "./Sidebar.css"
-import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/userSlice";
-const Sidebar = () => {
+import { useLocation, useNavigate } from "react-router-dom";
+const Sidebar = ({ user }) => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const navigate=useNavigate()
+    const location = useLocation(); 
+
     const handleLogout = () => {
         const confirmLogout = window.confirm("Are you sure you want to logout?");
         if (confirmLogout) {
-            dispatch(logout()); 
-            navigate("/"); 
-            
+            dispatch(logout());
+    
+            // Clear authentication data
+            localStorage.clear();
+            sessionStorage.clear();
+    
+            // Completely remove navigation history and redirect to home/login
+            window.location.replace("/");
         }
     };
-        return (
-         <div>
-         <div className="ss_sidebar" >
-         <h2 class="text-xl font-bold mb-4">Navigation</h2>
-
-        <ul>
-        <li className="active">
-            <Link ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart2"><line x1="18" x2="18" y1="20" y2="10"></line><line x1="12" x2="12" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="14"></line></svg>  Dashboard</Link>
-        </li>
-        <li>
-            <Link ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>  Customer Segmentation</Link>
-        </li>
-
-        <li>
-            <Link ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-line-chart"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>  Reports</Link>
-        </li>
-
-        <li>
-            <Link ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>  Market Trends</Link>
-        </li>
-        <li>
-            <Link ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>  Settings</Link>
-        </li>
-        <li>
-        <button onClick={handleLogout}><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>  Log Out</button>
-
-        </li>
-        </ul> 
-
-         </div>
-         </div>
-         
-               
-        )
+    
+    const handleAdminLogout = () => {
+        const confirmLogout = window.confirm("Are you sure you want to logout?");
+        if (confirmLogout) {
+            dispatch(logout());
+    
+            // Clear authentication data
+            localStorage.clear();
+            sessionStorage.clear();
+    
+            // Completely remove navigation history and redirect to home/login
+            window.location.replace("/admin");
+        }
+    };
+    
+    const isActive = (path) => location.pathname === path ? "active" : "";
+    return (
+        <div>
+            <div className="ss_sidebar">
+                <h2 className="text-xl font-bold mb-4">Navigation</h2>
+                {user && user.isAdmin ? (
+                    <ul>
+                        <li onClick={() => navigate('/admin/dashboard')} className={isActive('/admin/dashboard')}>
+                            <button >
+                                🏠 Dashboard
+                            </button>
+                        </li>
+                        <li onClick={() => navigate('/admin/manage-users')} className={isActive('/admin/manage-users')}>
+                            <button >
+                                👥 Manage Users
+                            </button>
+                        </li>
+                        <li onClick={handleAdminLogout}>
+                            <button >🚪 Log Out</button>
+                        </li>
+                    </ul>
+                ) : (
+                    <ul>
+                        <li onClick={() => navigate('/dashboard')} className={isActive('/dashboard')}>
+                            <button >
+                                🏠 Dashboard
+                            </button>
+                        </li>
+                        <li onClick={() => alert("working")} className={isActive('/customer-segmentation')}>
+                            <button >
+                                📊 Customer Segmentation
+                            </button>
+                        </li>
+                        <li onClick={() => alert("working")} className={isActive('/reports')}>
+                            <button >
+                                📈 Reports
+                            </button>
+                        </li>
+                        <li onClick={() => alert("working")} className={isActive('/market-trends')}>
+                            <button >
+                                🔔 Market Trends
+                            </button>
+                        </li>
+                        <li onClick={() => alert("working")} className={isActive('/settings')}>
+                            <button >
+                                ⚙️ Settings
+                            </button>
+                        </li>
+                        <li onClick={handleLogout}>
+                            <button >🚪 Log Out</button>
+                        </li>
+                    </ul>
+                )}
+            </div>
+        </div>
+    );
 
 }
 

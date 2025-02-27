@@ -30,7 +30,7 @@ const DetailsStep = ({ userDetails, setUserDetails, email }) => {
     e.preventDefault();
 
     try {
-      const response = await ApiService.signup(userDetails);
+      const response = await ApiService.ApiService.signup(userDetails);
       console.log("Response:", response);
 
       if (response.data.success === true) {

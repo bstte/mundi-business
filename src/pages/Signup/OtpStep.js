@@ -50,7 +50,7 @@ const OtpStep = ({ email, nextStep, prevStep }) => {
       const data = { email: email, code: otpValue };
       nextStep();
 
-      const response = await ApiService.VerifyCode(data);
+      const response = await ApiService.ApiService.VerifyCode(data);
       console.log("response", response.data.success);
   
       if (response.data.success === true) {

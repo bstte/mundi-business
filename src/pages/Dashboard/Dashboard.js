@@ -9,14 +9,16 @@ import ApiService from '../../API/ApiService';
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState("Vibrant");
+  // const [activeTab, setActiveTab] = useState("Vibrant");
+  const activeTab="Vibrant";
   const user = useSelector((state) => state.user.user);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [fileData, setFileData] = useState([]);
   const [currentStep, setCurrentStep] = useState(1);
   const [fileName, setFileName] = useState("");
   const navigate = useNavigate();
-
+  const [loading, setLoading] = useState(false);  // Loading State
+  const [progress, setProgress] = useState(0);   // Progress State
   // Handle File Upload
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -72,10 +74,22 @@ const Dashboard = () => {
             data: importedData 
         };
 
-        // const response = await ApiService.ApiService.excel_data(token, excelData);
+      setLoading(true);  // Start loading
+      setProgress(10);   // Initial progress
+
+
+      let progressInterval = setInterval(() => {
+        setProgress((prev) => (prev < 90 ? prev + 10 : prev));
+    }, 500);
+
+    const response = await ApiService.ApiService.excel_data(token, excelData);
+
+    clearInterval(progressInterval); // Stop interval when API responds
+    setProgress(100); // Complete progress
         alert("Data imported successfully!");
+        setLoading(false);
         setCurrentStep(3); // Move to next step
-        // console.log("Excel data response:", response);
+        console.log("Excel data response:", response);
     } catch (error) {
         console.error("Error importing data:", error);
     }
@@ -157,6 +171,8 @@ const navigateonvisualization=(fileData)=>{
         fileName={fileName}
         handleImport={handleImport}  
         navigateonvisualization={navigateonvisualization}
+        loading={loading}
+        progress={progress}
 
       />
     </>

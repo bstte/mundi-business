@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 
-import { Pie } from "react-chartjs-2"; // Import Pie chart
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 // Register chart components
@@ -10,9 +9,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 // Set Modal root element
 Modal.setAppElement("#root");
 
-const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep, setCurrentStep, fileName, handleImport,navigateonvisualization }) => {
+const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep, setCurrentStep, fileName, handleImport,navigateonvisualization,loading, progress }) => {
 
-  const [selectedColumn, setSelectedColumn] = useState(null); 
   const detectDataType = (value) => {
     if (!isNaN(Number(value)) && value.trim() !== "") {
       return "Number";
@@ -120,7 +118,23 @@ const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep,
           >
             <h4>Create new File Upload dataset</h4>
             <h3>Preview</h3>
-
+            {loading && (
+            <div style={{ margin: "20px auto", textAlign: "center" }}>
+              <div className="spinner" style={{
+                width: "50px",
+                height: "50px",
+                border: "5px solid #ddd",
+                borderTop: "5px solid #007bff",
+                borderRadius: "50%",
+                animation: "spin 1s linear infinite",
+                margin: "10px auto"
+              }}></div>
+              <p>Uploading... {progress}%</p>
+              <div style={{ width: "80%", margin: "auto", height: "10px", background: "#ddd", borderRadius: "5px" }}>
+                <div style={{ width: `${progress}%`, height: "100%", background: "#007bff", borderRadius: "5px" }}></div>
+              </div>
+            </div>
+          )}
             <button
               onClick={onClose}
               style={{
@@ -196,65 +210,7 @@ const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep,
         </>
       )}
 
-      {/* Step 3: Import Complete */}
-{/* 
-      {currentStep === 3 && (
-        <div className="ss_select_albom flex flex-col items-center space-y-6">
-         
-          <div className="w-full p-4 border-b ss_uplod_lft_col_sec">
-            <h3 className="text-lg font-bold mb-2">Select a Column</h3>
-            <ul className="flex space-x-4">
-              {Object.keys(fileData[0] || {}).map((key, index) => (
-                <li
-                  key={index}
-                  className="text-gray-700 cursor-pointer hover:text-blue-500 px-3 py-1 border rounded"
-                  onClick={() => setSelectedColumn(key)}
-                >
-                  {key}
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div className="flex w-full p-4 border space-x-6 ss_uplod_rit_col_sec">
-         
-            <div className="flex-1 border p-4">
-              <h3 className="text-lg font-bold mb-2">Selected Column</h3>
-              <p className="text-gray-700">{selectedColumn}</p>
-            </div>
-
-         
-            <div className="flex-1 border p-4 flex justify-center items-center">
-              {selectedColumn && (
-                <div className="w-40 h-40">
-                  <h3 className="text-lg font-bold mb-2 text-center">Pie Chart</h3>
-                  <Pie data={{
-                    labels: [...new Set(fileData.map(row => row[selectedColumn]))],
-                    datasets: [{
-                      data: Object.values(fileData.reduce((acc, row) => {
-                        acc[row[selectedColumn]] = (acc[row[selectedColumn]] || 0) + 1;
-                        return acc;
-                      }, {})),
-                      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4CAF50", "#8E44AD"],
-                    }]
-                  }} />
-                </div>
-              )}
-            </div>
-
-          
-            <div className="flex-1 border p-4">
-              <h3 className="text-lg font-bold mb-2">Selected Data</h3>
-              <div className="flex flex-wrap gap-2">
-                {selectedColumn && fileData.map((row, index) => (
-                  <span key={index} className="text-gray-600 px-2 py-1 border rounded">{row[selectedColumn]}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
- */}
 
 
 {currentStep === 3 && (
@@ -273,7 +229,6 @@ const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep,
               zIndex: "1000",
             }}
           >
-            <h4></h4>
             <h3>{fileName}</h3>
          
 
@@ -349,6 +304,7 @@ const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep,
         }}
       >
         {currentStep === 2 && (
+          
           <button className="btn btn-success w-full ss_import_btn" onClick={() => handleImport(fileData)}>
             Import
           </button>

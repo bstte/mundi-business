@@ -39,7 +39,6 @@ const DataVisualization = () => {
     const [pieName, setPieName] = useState(null);
     const [pieValue, setPieValue] = useState(null);
     const [isColumnOpen, setIsColumnOpen] = useState(true);
-    const [hoveredIndex, setHoveredIndex] = useState(null);
 
     if (!fileData || fileData.length === 0) {
         return <h2 style={{ textAlign: "center", marginTop: "20px" }}>No Data Available</h2>;
@@ -69,9 +68,9 @@ const DataVisualization = () => {
         }
     };
 
-    const truncateText = (text, maxLength = 20) => {
-        return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
-    };
+    // const truncateText = (text, maxLength = 20) => {
+    //     return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+    // };
 
     const chartData = xAxis && yAxis ? {
         labels: [...new Set(fileData.map(row => String(row[xAxis])))], // Ensuring unique x-values
@@ -315,8 +314,7 @@ const DataVisualization = () => {
                                             }}>
                                                 {pieData.labels.map((label, index) => (
                                                     <li key={index}
-                                                        onMouseEnter={() => setHoveredIndex(index)}
-                                                        onMouseLeave={() => setHoveredIndex(null)}
+                                                
                                                         style={{ padding: "5px", cursor: "pointer", borderTop: "1px solid #ccc", justifyContent: "space-between", display: "flex" }}>
                                                         <h6>{label ? (label.length > 10 ? label.substring(0, 20) + "..." : label) : "N/A"}:</h6>
                                                         <strong>{pieData.dataMap.get(label).count}</strong>

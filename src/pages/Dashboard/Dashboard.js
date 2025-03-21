@@ -77,15 +77,15 @@ const Dashboard = () => {
       setLoading(true);  // Start loading
       setProgress(10);   // Initial progress
 
-
+console.log(excelData)
       let progressInterval = setInterval(() => {
         setProgress((prev) => (prev < 90 ? prev + 10 : prev));
     }, 500);
 
     const response = await ApiService.ApiService.excel_data(token, excelData);
-
+    setProgress(100);
     clearInterval(progressInterval); // Stop interval when API responds
-    setProgress(100); // Complete progress
+     // Complete progress
         alert("Data imported successfully!");
         setLoading(false);
         setCurrentStep(3); // Move to next step

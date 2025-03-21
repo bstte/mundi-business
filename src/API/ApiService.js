@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://mundiserver.vercel.app/api/';
+// const DEEPSEEK_API_KEY = 'sk-e40a6b69c6714fa588f5c1145cbdbafd';
+const LOCAL_URL = 'http://127.0.0.1:5000/';
 
 // Axios instance
 const api = axios.create({
@@ -10,6 +12,24 @@ const api = axios.create({
     },
 });
 
+
+
+const localApi = axios.create({
+    baseURL: LOCAL_URL,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+});
+
+// Axios instance for file upload
+const fileApi = axios.create({
+    baseURL: LOCAL_URL,
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+});
+
+  
 // API functions
 const ApiService = {
     SendVerificationCode: (data) => api.post('auth/send-verification-code', data),
@@ -19,6 +39,17 @@ const ApiService = {
     getUserProfile: (token) => api.get('user/profile', { 
         headers: { Authorization: `Bearer ${token}` } 
     }),
+    excel_data: (token, excelData) => api.post('user/excel-data', excelData, { 
+        headers: { Authorization: `Bearer ${token}` } 
+    }),
+    
+    chatWithDeepSeek: (message) => localApi.post('chat', { message }),
+    uploadFile: (file) => {
+        const formData = new FormData();
+        formData.append("file", file);
+        return fileApi.post('chat', formData);
+    },
+
 };
 
 // Admin API functions

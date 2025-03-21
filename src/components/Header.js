@@ -125,11 +125,11 @@ const Header = ({user}) => {
                         <button>Free Trial</button>
                       </li>
                       <li>
-                      <button onClick={() => navigate('/signup')}>Get Demo</button>
+                      <button onClick={() => navigate('/signup',{ replace: true })}>Get Demo</button>
                       </li>
 
                       <li>
-                        <button onClick={() => navigate('/login')}><span>Sign in</span></button>
+                        <button onClick={() => navigate('/login',{ replace: true })}><span>Sign in</span></button>
                       </li>
                     </>
                   )

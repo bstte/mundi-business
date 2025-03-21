@@ -6,6 +6,8 @@ import Login from "../pages/Login/Login";
 import AdminLogin from "../AdminPages/AdminLogin/AdminLogin";
 
 import PrivateRoute from "./PrivateRoute"; // Import Private Route
+import Chat from "../components/Chat";
+import DataVisualization from "../pages/DataVisualization/DataVisualization";
 
 
 
@@ -24,6 +26,8 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/chat" element={<Chat />} /> {/* ✅ Add Chat Page */}
+        <Route path="/data-visualization" element={<DataVisualization />} />
 
         {/* Protected User Dashboard Route */}
         <Route

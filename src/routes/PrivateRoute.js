@@ -2,8 +2,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ element }) => {
-  const token = localStorage.getItem("token"); // Redux ya localStorage se token lein
-
+  const token = localStorage.getItem("token"); 
   return token ? element : <Navigate to="/" replace />;
 };
 

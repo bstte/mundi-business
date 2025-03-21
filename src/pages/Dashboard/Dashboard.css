@@ -153,8 +153,9 @@ section.ss_dash_hed {
     --tw-gradient-to: #2563eb;
 }
 
-.ss_main_sec_Vibrant h3{
-    color:#0d9488;
+.ss_main_sec_Vibrant h3 {
+    color: #ffffff;
+    text-align: center;
 }
 
 .ss_main_sec_Vibrant .ss_dash_graph_div svg, .ss_main_sec_Vibrant .ss_dash_graph_div_last{
@@ -168,7 +169,8 @@ section.ss_dash_hed {
 
 .ss_main_sec_Vibrant .ss_dash_graph_div{
     border: 2px solid #e5e5e5;
-    border-color: rgb(253 186 116);
+    /* border-color: rgb(253 186 116); */
+    background: #1e3a8a;
 
 }
 
@@ -231,10 +233,9 @@ color:#fff;
         color: #1d4ed8;
     }
 
-    .ss_dash_graph_div p{
-        color: rgb(107 114 128);
+    .ss_dash_graph_div p {
+        color: rgb(8 196 188);
     }
-
     .ss_dash_graph_div_last ul {
         display: flex;
         list-style: none;
@@ -243,7 +244,37 @@ color:#fff;
         padding: 0;
         margin: 0;
     }
-    
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .modal-container {
+        z-index: 9999 !important;
+      }
+
+      .ss_dash_graph_div{
+        text-align: center;
+      }
+      .ss_dash_graph_div button{
+        margin-top:20px;
+      }
+      
+      
     .ss_dash_graph_div_last ul button {
         border-color: rgb(228 228 231);
         border: 1px solid rgb(228 228 231);
@@ -264,3 +295,112 @@ color:#fff;
         border: 2px solid #e5e5e5;
         border-color: rgb(187 247 208);
     }
+
+
+    .ss_popup_upload {
+        border-bottom: 1px solid #e5e5e5;
+        text-align: center;
+        padding: 30px 0 19px;
+        position: relative !important;
+    }
+    .ss_popup_upload h4{
+        color: #666;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+
+    .ReactModal__Overlay{
+        z-index: 999;
+        background-color: rgb(37 37 37 / 75%) !important;
+    }
+.ss_upload_docu_content{
+    align-items: center;
+    display: flex;
+        flex-wrap: wrap;
+        padding: 40px 40px 70px !important;
+}
+
+.ss_file_name {
+    font-size: 22px;
+    text-align: center !important;
+    width: 100%;
+}
+    .ss_import_btn{
+            background: #1e3a8a;
+    border: 0;
+    padding: 8px 20px;
+    }
+    .ss_upload_docu_content > div {
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #cbd5e0; /* Light gray border */
+        padding: 50px 20px 80px;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        background-color: #f9fafb; /* Light background */
+        transition: border-color 0.3s ease-in-out;
+    }
+    
+    .ss_upload_docu_content > div:hover {
+        border-color: #60a5fa; /* Blue border on hover */
+    }
+    
+    .ss_upload_docu_content label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .ss_upload_docu_content input {
+        display: none; /* Hide default file input */
+    }
+    
+    .ss_upload_docu_content div.text-center {
+        font-size: 16px;
+        font-weight: 600;
+        color: #4a5568; /* Dark gray text */
+        margin-top: 12px;
+    }
+    
+    .ss_upload_docu_content div.text-center::before {
+        content: "⬆️"; /* Upload icon */
+        display: block;
+        font-size: 32px;
+        color: #3b82f6; /* Blue icon */
+        margin-bottom: 8px;
+    }
+    .ReactModal__Content.ReactModal__Content--after-open {
+        inset: 0 !important;
+    }
+    .ss_file_table_privw{
+        border: 0 !important;
+    }
+
+    .ss_select_albom {
+        border: 0px solid #e5e5e5 !important;
+        padding: 0 !important;
+    }
+
+    .ss_select_albom ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .ss_uplod_lft_col_sec{
+        width: 30%;
+    padding: 0 !important;
+}
+
+.ss_select_albom{
+    display: flex !important;
+        flex-direction: row !important;
+        align-items: start !important;
+}
+.ss_uplod_rit_col_sec{
+    width: 70%;
+    border: 0 !important;
+}

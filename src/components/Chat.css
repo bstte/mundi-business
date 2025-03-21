@@ -1,0 +1,113 @@
+.chat-container {
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 16px;
+  }
+  
+  .chat-header {
+    background-color: #4a90e2;
+    color: white;
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .chat-box {
+    padding: 16px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+  }
+  
+  .message {
+    margin-bottom: 12px;
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    display: inline-block;
+  }
+  
+  .user {
+    background-color: #dcf8c6;
+    text-align: right;
+  }
+  
+  .bot {
+    background-color: #fff;
+    border: 1px solid #eee;
+  }
+  
+  .input-container {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+  }
+  
+  .text-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none;
+  }
+  
+  .send-button {
+    margin-left: 8px;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .file-upload-container {
+    margin-top: 20px;
+    padding: 16px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+  }
+  
+  .upload-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .file-result {
+    margin-top: 16px;
+    overflow-x: auto;  /* Enable horizontal scrolling */
+    max-width: 100%;  /* Ensure it doesn't exceed the container */
+    white-space: nowrap;  /* Prevent line breaks */
+}
+.upload-icon {
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.upload-icon svg {
+  color: #007bff;
+}
+
+.file-selected {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+  
+  

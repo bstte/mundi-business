@@ -300,13 +300,24 @@ color:#fff;
     .ss_popup_upload {
         border-bottom: 1px solid #e5e5e5;
         text-align: center;
-        padding: 30px 0 19px;
+        padding: 10px 0 0px !important;
         position: relative !important;
     }
     .ss_popup_upload h4{
         color: #666;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+    .ss_popup_upload h3{
+        font-size: 22px;
+    }
+    .ss_excl_head_secc p{
+        margin-bottom: 0;
+    }
+    .ss_ex_tbl_para th, .ss_ex_tbl_para p {
+        font-size: 12px;
+        margin-bottom: 0;
     }
 
     .ReactModal__Overlay{
@@ -403,4 +414,10 @@ color:#fff;
 .ss_uplod_rit_col_sec{
     width: 70%;
     border: 0 !important;
+}
+
+
+.ss_column_data_btn {
+    height: 100vh;
+    overflow: scroll;
 }

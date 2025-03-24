@@ -1,0 +1,34 @@
+.ss_column_data_btn {
+    height: 80vh;
+    overflow: scroll;
+}
+
+.ss_data_visu_btn button {
+    padding: 6px 10px!important;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.ss_data_visu_btn button:nth-child(1) {
+    background: #1e3a8a !important;
+}
+
+.ss_data_visu_btn button:nth-child(2) {
+    background: #1d4ed8 !important;
+}
+
+/* Scrollbar Track */
+.ss_column_data_btn::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Scrollbar Handle */
+.ss_column_data_btn::-webkit-scrollbar-thumb {
+    background: #1e3a8a; /* Change to your desired color */
+    border-radius: 5px;
+}
+
+.ss_data_table_main {
+    height: 80vh;
+    overflow: scroll;
+}

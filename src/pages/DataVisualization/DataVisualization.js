@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Pie, Bar, Line } from "react-chartjs-2";
+import "./DataVisualization.css";
 import {
     Chart as ChartJS,
     ArcElement,
@@ -144,7 +145,7 @@ const DataVisualization = () => {
                 }}
             >
                 <h2 style={{ margin: 0 }}>Analyzer</h2>
-                <div>
+                <div className="ss_data_visu_btn">
                     <button
                         onClick={() => setActiveTab("data")}
                         style={{
@@ -183,12 +184,15 @@ const DataVisualization = () => {
                     {/* Columns Section */}
                     <div style={{ width: "20%", padding: "10px", borderRight: "1px solid #ccc" }}>
                         <h3 onClick={() => setIsColumnOpen(!isColumnOpen)} style={{ cursor: "pointer" }}>Columns {isColumnOpen ? "▲" : "▼"}</h3>
+                        <div className="ss_column_data_btn">
                         {isColumnOpen && headings.map((heading, index) => (
                             <div key={index} draggable onDragStart={(e) => handleDragStart(e, heading)}
                                 style={{ cursor: "grab", padding: "5px", border: "1px solid #ccc", margin: "5px" }}>
                                 {heading}
                             </div>
                         ))}
+                        </div>
+                     
                     </div>
 
                     {/* Chart Section */}
@@ -343,7 +347,7 @@ const DataVisualization = () => {
                     </div>
 
                     {/* Chart Type Section */}
-                    <div style={{ width: "10%", padding: "10px", borderLeft: "1px solid #ccc" }}>
+                    <div style={{ width: "20%", padding: "10px", borderLeft: "1px solid #ccc" }}>
                         <h3>Chart Type</h3>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 {[ 
@@ -382,8 +386,9 @@ const DataVisualization = () => {
                 </div>
             ) :
                 <>
-                    <div style={{ margin: "20px", overflowX: "auto" }}>
+                    <div style={{ margin: "20px", overflowX: "auto" }} className="">
                         <h3>Data Table</h3>
+                        <div className="ss_data_table_main">
                         <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
                             <thead>
                                 <tr style={{ background: "#36A2EB", color: "white" }}>
@@ -402,6 +407,7 @@ const DataVisualization = () => {
                                 ))}
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </>
             }

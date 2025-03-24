@@ -89,7 +89,7 @@ const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep,
           </div>
           <div className="ss_upload_docu_content" style={{ flex: 1, padding: "70px 20px 70px", overflowY: "auto" }}>
 
-            <div className="flex flex-col items-center justify-center border-2 border-dashed border-gray-400 p-6 rounded-lg cursor-pointer">
+            <div className="ss_div flex flex-col items-center justify-center border-2 border-dashed border-gray-400 p-6 rounded-lg cursor-pointer">
               <label className="cursor-pointer">
                 <input type="file" className="hidden" accept=".csv, .xlsx, .xls" onChange={onFileUpload} />
                 <div className="text-center text-gray-600">📁 Click to upload CSV or Excel file</div>
@@ -152,7 +152,7 @@ const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep,
 
           </div>
         {/* Dynamic File Info */}
-        <div style={{ marginLeft: 20, marginTop: 30 }}>
+        <div style={{ marginLeft: 20, marginTop: 10 }}  className="ss_excl_head_secc">
     <h4>Review column headers and data types then import</h4>
     <p>Some cells might have format errors or missing information. Please adjust and import – or you can fix later in Domo.</p>
     
@@ -178,7 +178,7 @@ const FileUploadModal = ({ isOpen, onClose, onFileUpload, fileData, currentStep,
 <div className="border rounded p-2 ss_file_table_privw" style={{ maxHeight: "300px", overflowY: "auto" }}>
   <table className="w-full border-collapse border border-gray-300">
     <thead style={{ position: "sticky", top: "0", background: "#fff", zIndex: "10" }}>
-      <tr className="bg-gray-100">
+      <tr className="bg-gray-100 ss_ex_tbl_para">
         <th className="border p-2">#</th> {/* Row number column */}
         {Object.keys(fileData[0] || {}).map((key) => {
           const firstValue = fileData[0]?.[key] || "";

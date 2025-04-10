@@ -42,6 +42,14 @@ const ApiService = {
     excel_data: (token, excelData) => api.post('user/excel-data', excelData, { 
         headers: { Authorization: `Bearer ${token}` } 
     }),
+
+    getInsights: (token, data) => api.post('user/get-insights', data, { 
+        headers: { Authorization: `Bearer ${token}` } 
+    }),
+
+    getCustomInsights: (token, data) => api.post('user/get-custom-insights', data, { 
+        headers: { Authorization: `Bearer ${token}` } 
+    }),
     
     chatWithDeepSeek: (message) => localApi.post('chat', { message }),
     uploadFile: (file) => {

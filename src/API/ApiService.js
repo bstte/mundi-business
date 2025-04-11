@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://mundiserver.vercel.app/api/';
+// const BASE_URL = 'https://mundiserver.vercel.app/api/';
+const BASE_URL = 'https://server-production-2097.up.railway.app/api/';
 // const DEEPSEEK_API_KEY = 'sk-e40a6b69c6714fa588f5c1145cbdbafd';
 const LOCAL_URL = 'http://127.0.0.1:5000/';
 

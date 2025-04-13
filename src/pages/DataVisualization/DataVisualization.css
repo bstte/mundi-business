@@ -233,6 +233,15 @@
 .spinner {
   width: 16px;
   height: 16px;
+  border: 2px solid rgba(128, 128, 128, 0.3); 
+  border-radius: 50%;
+  border-top-color: #4b6ef5; 
+  animation: spin 1s ease-in-out infinite;
+}
+
+.spinners {
+  width: 16px;
+  height: 16px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   border-top-color: #fff;

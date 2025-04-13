@@ -7,6 +7,7 @@ import FileUploadModal from "../../components/FileUploadModal"; // Import Modal 
 import "./Dashboard.css";
 import ApiService from '../../API/ApiService';
 import { useNavigate } from "react-router-dom";
+import {toast} from 'sonner'
 
 const Dashboard = () => {
   // const [activeTab, setActiveTab] = useState("Vibrant");
@@ -86,7 +87,7 @@ console.log(excelData)
     setProgress(100);
     clearInterval(progressInterval); // Stop interval when API responds
      // Complete progress
-        alert("Data imported successfully!");
+        toast.success("Data imported successfully!");
         setLoading(false);
         setCurrentStep(3); // Move to next step
         console.log("Excel data response:", response);

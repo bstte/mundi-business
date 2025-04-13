@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import {toast} from 'sonner'
 import { Pie, Bar, Line, Doughnut, Radar, PolarArea, Scatter } from "react-chartjs-2"
 import "./DataVisualization.css"
 import {
@@ -286,9 +287,8 @@ const DataVisualization = () => {
       const payload = { data: fileData }
       const response = await ApiService.getInsights(token, payload)
 
-      console.log("Insights:", response.data)
       setInsights(response.data) // Save insights in state
-      alert("Insights received!")
+      toast.success("Insights received!")
     } catch (error) {
       console.error("Error fetching insights:", error)
       alert("Failed to fetch insights.")
@@ -465,7 +465,7 @@ const DataVisualization = () => {
           <button onClick={handleCustomInsight} disabled={customLoading} className="ask-button">
             {customLoading ? (
               <div className="loading-indicator">
-                <div className="spinner" />
+                <div className="spinners" />
                 <span>Processing...</span>
               </div>
             ) : (
